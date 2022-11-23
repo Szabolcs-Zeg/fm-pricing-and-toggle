@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+:root{
+  --Clr-Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+  --Clr-Light-Grayish-Blue: hsl(234, 14%, 74%);
+  --Clr-Grayish-Blue: hsl(233, 13%, 49%);
+  --Clr-Dark-Grayish-Blue: hsl(232, 13%, 33%);
+  --Clr-blue:hsl(237, 63%, 64%);
+
+  --gradient-hor-blue:  linear-gradient(90deg, hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+  --gradient-ver-blue:  linear-gradient( hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+
+  --ff-body: 'Montserrat', sans-serif;
+  --ff-heading: var(--ff-body);
+
+  --fw-normal:700;
+  --fw-bold:700;
+
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+ 
+}
+
+html, body  {
+  height: 100%;
+  font-family: var(--ff-body);
+  font-weight:var(--fw-normal) ;
+  color:var(--Clr-Dark-Grayish-Blue);
+  font-size: 15px;
+}
+
+body {
+ 
+  -webkit-font-smoothing: antialiased;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+ul {
+  list-style: none;
+}
+
+.centered{
+    text-align: center;
+  }
+  
+main{
+  background:url("./images/bg-top.svg") no-repeat top -3% right -40% , var(--Clr-Very-Light-Grayish-Blue);
+  background-size: 60vw;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}  
+
+.main_container {
+  width: 100vw;  
+}
+
+h1{
+  font-size: 2rem;
+}
+
+.card_container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin: 3rem;  
+}
+
+.card{
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0px 4px 15px 10px rgba(207, 204, 204, 0.25);
+  
+}
+
+.card_bigger {
+  background: var(--gradient-ver-blue);
+  color: white;
+   z-index:5;
+}
+
+.card > * {
+  padding: 0.7rem 0;
+ }
+
+.price {
+  font-size: 3rem;
+  padding-bottom: 1.5rem;
+} 
+
+.description {
+  font-size: 0.8rem;
+  padding: 1.1em 0;
+  border-top: 1px solid;
+  border-color: var(--Clr-Very-Light-Grayish-Blue);
+}
+
+.card_bigger .description {
+  border-color: white !important;
+}
+
+.description:first-of-type{
+  margin-top: 1rem;
+}
+.description:last-of-type {
+  margin-bottom: 1.7rem;
+  border-bottom: 1px solid ;
+  border-bottom-color: var(--Clr-Very-Light-Grayish-Blue);
+}
+
+button{
+  outline: none;
+  border: 0px;
+  background: var(--gradient-hor-blue);
+  color: white;
+  width: 100%;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all ease-in-out .3s;
+  border: 1px solid transparent;
+}
+
+.card_bigger button {
+  background:white;
+  color:var(--Clr-blue);
+}
+
+button:hover {
+  background:white;
+  color:var(--Clr-blue);
+  border: 1px solid var(--Clr-blue);
+}
+
+
+.card_bigger button:hover {
+  color:white;
+  background:var(--Clr-blue);
+  border: 1px solid white;
+}
+.toggle_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 2rem 0;
+  color: var(--Clr-Light-Grayish-Blue);
+}
+
+#toggle{
+  appearance: none;
+  width:3.4rem;
+  height: 1.7rem;
+  border-radius: 100vh;
+  background: var(--gradient-hor-blue);
+  cursor:pointer;
+  position: relative;
+  transition: all 0.2s;
+}
+
+#toggle:hover {
+  opacity: 0.6;
+}
+#toggle:before{
+ content:"";
+ position: absolute;
+ background-color: white;
+ height:76%;
+ aspect-ratio: 1;
+ border-radius: 50%;
+ top:12%;
+ left:8%;
+ transition: all ease-in-out 0.3s;
+
+}
+#toggle:checked:before{
+  left: 57%;
+}
+
+.attribution { font-size: 0.9rem; text-align: center; padding: 0.5rem 0;}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+
+
+@media (min-width: 764px) {
+  main{
+    background: url("./images/bg-top.svg") no-repeat top right,
+    url("./images/bg-bottom.svg") no-repeat bottom left,
+    var(--Clr-Very-Light-Grayish-Blue); 
+  }
+
+  .card_container {
+    grid-template-rows: unset;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: auto;
+    margin-right: auto;  
+    width: min(90vw, 60rem);
+    gap: 0rem;
+       
+  }
+
+  .card_bigger {
+    transform:scale(1.09);
+ 
+  }
+  
+}
